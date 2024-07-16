@@ -5,6 +5,8 @@ import Search from './Componentes/Search/Search';
 import { CompanySearch } from './company';
 import { searchCompanies } from './api';
 import ListPortfolio from './Componentes/Portfolio/ListPortfolio/ListPortfolio';
+import Navbar from './Componentes/Navbar/Navbar';
+import Hero from './Componentes/Hero/Hero';
 
 
 
@@ -47,6 +49,7 @@ function App() {
   };
   return (
     <div className="App">
+      <Navbar />
       <Search
         onSearchSubmit={onSearchSubmit}
         search={search}
