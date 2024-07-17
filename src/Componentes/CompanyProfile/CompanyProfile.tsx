@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react';
-import { CompanyKeyMetrics } from '../../company';
-import { useOutletContext } from 'react-router-dom';
-import { getKeyMetrics } from '../../api';
-import RatioList from '../RatioList/RatioList';
+import React, { useEffect, useState } from "react";
+import { useOutletContext } from "react-router-dom";
+import { CompanyKeyMetrics } from "../../company";
+import { getKeyMetrics } from "../../api";
+import RatioList from "../RatioList/RatioList";
 
-interface Props {}
+type Props = {};
 
 const tableConfig = [
   {
@@ -80,7 +80,7 @@ const CompanyProfile = (props: Props) => {
   return (
     <>
     { companyData ? (
-      <><RatioList data={companyData} config={tableConfig} /></>
+      <><RatioList config={tableConfig} data={companyData} /></>
     ) : (
       <>Loading...</>
     )}
