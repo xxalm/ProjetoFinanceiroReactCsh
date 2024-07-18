@@ -8,6 +8,8 @@ import IncomeStatement from "../Componentes/IncomeStatement/IncomeStatement";
 import DesignGuide from "../Pages/DesignGuide/DesignGuide";
 import BalanceSheet from "../Componentes/BalanceSheet/BalanceSheet";
 import CashFlowStatement from "../Componentes/CashFlowStatement/CashFlowStatement";
+import HistoricalDividend from "../Componentes/HistoricalDividend/HIstoricalDividend";
+
 
 export const router = createBrowserRouter([
     {
@@ -25,6 +27,7 @@ export const router = createBrowserRouter([
                     { path: "income-statement", element: <IncomeStatement /> },
                     { path: "balance-sheet", element: <BalanceSheet /> },
                     { path: "cashflow-statement", element: <CashFlowStatement /> },
+                    { path: "historical-dividend", element: <HistoricalDividend /> },
                 ],
             },
 
