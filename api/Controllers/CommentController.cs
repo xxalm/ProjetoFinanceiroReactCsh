@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using api.Dtos.Comment;
 using api.Interfaces;
 using api.Mappers;
@@ -63,9 +59,6 @@ namespace api.Controllers
 
         [HttpPut("{id:int}")]
         public async Task<IActionResult> Update([FromRoute] int id, [FromBody] UpdateCommentRequestDto updateDto) {
-
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
 
             if(!ModelState.IsValid)
                 return BadRequest(ModelState);
