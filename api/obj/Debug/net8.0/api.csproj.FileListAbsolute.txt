@@ -137,3 +137,7 @@ C:\Users\leckson\source\repos\ProjetoFinanceiro\api\bin\Debug\net8.0\runtimes\wi
 C:\Users\leckson\source\repos\ProjetoFinanceiro\api\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 C:\Users\leckson\source\repos\ProjetoFinanceiro\api\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\leckson\source\repos\ProjetoFinanceiro\api\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\leckson\source\repos\ProjetoFinanceiro\api\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\leckson\source\repos\ProjetoFinanceiro\api\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\leckson\source\repos\ProjetoFinanceiro\api\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\leckson\source\repos\ProjetoFinanceiro\api\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
