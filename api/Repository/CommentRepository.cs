@@ -1,4 +1,5 @@
 using api.Data;
+using api.Helpers;
 using api.Interfaces;
 using api.Models;
 using Microsoft.EntityFrameworkCore;
@@ -23,7 +24,8 @@ namespace api.Repository
         public async Task<Comment?> DeleteAsync(int id)
         {
             var commentModel = await _context.Comments.FirstOrDefaultAsync(x => x.Id == id);
-            if(commentModel == null) {
+            if (commentModel == null)
+            {
                 return null;
             }
             _context.Comments.Remove(commentModel);
@@ -31,14 +33,28 @@ namespace api.Repository
             return commentModel;
         }
 
-        public async Task<List<Comment>> GetAllAsync() {
-            return await _context.Comments.Include(a => a.AppUser).ToListAsync();
+        public async Task<List<Comment>> GetAllAsync(CommentQueryObject queryObject)
+        {
+            var comments = _context.Comments.Include(a => a.AppUser).AsQueryable();
+
+            if (!string.IsNullOrWhiteSpace(queryObject.Symbol))
+            {
+                comments.Where(s => s.Stock.Symbol == queryObject.Symbol);
+            };
+
+            if (queryObject.IsDescending == true)
+            {
+                comments = comments.OrderByDescending(c => c.CreatedOn);
+            }
+
+            return await comments.ToListAsync();
         }
 
-        public async Task<Comment?> GetByIdAsync(int id) {
+        public async Task<Comment?> GetByIdAsync(int id)
+        {
 
             return await _context.Comments.Include(a => a.AppUser).FirstOrDefaultAsync(c => c.Id == id);
-            
+
         }
 
         public async Task<Comment?> UpdateAsync(int id, Comment commentModel)
